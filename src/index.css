@@ -1,13 +1,117 @@
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&display=swap');
+
+
+:root {
+  /* Font-size */
+  --smallsizefont: 16px;
+  --normalsizefont: 18px;
+  /* Font-weight */
+  --normalheight: 400;
+  --semibold: 600;
+  --bolder: 700;
+  /* Fonts-family */
+  --fonttitle: "prata", sans-serif;
+  --fonttext: 'Montserrat', sans-serif;
+
+  /* Principal 
+  colors */
+  --white: #FFFFFF;
+  --purpledefault: #6278F7;
+  --lightgreen: #95ffd4;
+  --lightgray: #f2f2f2;
+  --placeholdercolor: #A4A4A4;
+
+  /* Background colors */
+  --greenbg:#D9F7E9;
+  --bluebg: #E8F8FF;
+  --limegreenbg: #F0F8E2;
+  --salmonbg: #FDE7E8;
+  --lightpinkbg:#FAE9F5;
+  --yellowbg:#FFF5D9;
+  --orangebg: #FFEEDF;
+  --lightgraybg: #F6F6F6;
+  /*Highlights colors*/
+  --greenHL: #57C278;
+  --blueHL: #82CFFA;
+  --limeHL: #A6D157;
+  --redHL: #E06B69;
+  --pinkHL: #DB6EBF;
+  --orangeHL: #FFBA05;
+  --darkorangeHL: #FF8A29;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fonttitle);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--fonttext);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.btn {
+  font-family: var(--fonttext);
+  width: 167px;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  font-size: var(--normalsizefont);
+  font-weight: var(--bolder);
+  color: var(--white);
+  background-color: var(--purpledefault);
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    color: var(--lightgreen);
+  }
+}
+
+.card {
+  width: 262px;
+  height: 272px;
+  
+}
+
+.rectangle {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px; 
+  background-color: var(--greenHL);
+  z-index: -1; 
+}
+
+
+.name__card {
+ font-weight: var(--semibold);
+ font-size: var(--normalsizefont);
+ color: var(--purpledefault);
+}
+
+.text__card {
+  font-size: var(--smallsizefont);
+}
+
+::placeholder {
+  color: var(--placeholdercolor);
+}
+
+input {
+  font-size: var(--smallsizefont);
+  font-family: var(--fonttext);
+  box-sizing: border-box;
+  padding-inline: 24px;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea:focus {
+  outline: none;
 }
