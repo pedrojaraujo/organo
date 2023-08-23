@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-block: 30px;
+}
+
+.label {
+  font-weight: var(--semibold);
+  font-size: var(--normalsizefont);
+}
+
+.select {
+  border: none;
+  height: 80px;
+  width: 930px;
+  box-shadow: 10px 10px 30px 0px #0000000f;
+  font-family: var(--fonttext);
+  padding: 24px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.option {
+  color: black;
+}

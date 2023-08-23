@@ -1,0 +1,20 @@
+.input__container {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 930px;
+  height: 110px;
+  margin-block: 30px;
+}
+
+.label__input {
+  font-weight: var(--semibold);
+  font-size: var(--normalsizefont);
+}
+
+.input__text {
+  border: none;
+  height: 80px;
+  width: 930px;
+  box-shadow: 10px 10px 30px 0px #0000000f;
+}

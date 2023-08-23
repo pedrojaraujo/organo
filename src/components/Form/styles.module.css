@@ -1,0 +1,16 @@
+.text__container {
+  box-sizing: border-box;
+  width: 1121px;
+  height: 789px;
+  margin-inline: auto;
+  margin-block: 80px;
+  padding-block: 10px;
+  padding-inline: 100px;
+  box-shadow: 7px 7px 15px 0px #00000014;
+  background-color: var(--lightgraybg);
+  border-radius: 20px;
+}
+
+.title__text__field {
+  font-weight: var(--normalheight);
+}

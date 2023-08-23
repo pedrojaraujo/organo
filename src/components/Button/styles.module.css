@@ -1,0 +1,16 @@
+.button {
+  font-family: var(--fonttext);
+  width: 167px;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  font-size: var(--normalsizefont);
+  font-weight: var(--bolder);
+  color: var(--white);
+  background-color: var(--purpledefault);
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    color: var(--lightgreen);
+  }
+}
