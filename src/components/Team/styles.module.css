@@ -1,0 +1,16 @@
+.container {
+  text-align: center;
+  padding: 32px;
+}
+
+.h3 {
+  font-size: var(--largesizefont);
+  border-bottom: 4px solid;
+}
+
+.containerCard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: top;
+}

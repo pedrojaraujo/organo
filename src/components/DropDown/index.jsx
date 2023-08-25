@@ -1,37 +1,6 @@
 import styles from "./styles.module.css";
 
-export const DropDown = ({ label, setTime, time }) => {
-  const grupos = [
-    {
-      id: 1,
-      name: "Programação",
-    },
-    {
-      id: 2,
-      name: "Front-End",
-    },
-    {
-      id: 3,
-      name: "Data Science",
-    },
-    {
-      id: 4,
-      name: "Devops",
-    },
-    {
-      id: 5,
-      name: "Ux e Design",
-    },
-    {
-      id: 6,
-      name: "Mobile",
-    },
-    {
-      id: 7,
-      name: "Inovação e Gestão",
-    },
-  ];
-
+export const DropDown = ({ label, setTime, time, grupos }) => {
   return (
     <div className={styles.container}>
       <label className={styles.label}>{label}</label>

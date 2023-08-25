@@ -4,6 +4,7 @@
   /* Font-size */
   --smallsizefont: 16px;
   --normalsizefont: 18px;
+  --largesizefont: 32px;
   /* Font-weight */
   --normalheight: 400;
   --semibold: 600;
@@ -12,7 +13,7 @@
   --fonttitle: "prata", sans-serif;
   --fonttext: "Montserrat", sans-serif;
 
-  /* Principal 
+  /* Principal
   colors */
   --white: #ffffff;
   --purpledefault: #6278f7;

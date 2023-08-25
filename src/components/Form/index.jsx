@@ -3,8 +3,9 @@ import styles from "./styles.module.css";
 import { Textfields } from "../Textfields";
 import { DropDown } from "../DropDown";
 import { Button } from "../Button";
+import { v4 as uuidv4 } from 'uuid';
 
-export const Form = ({ title, value, registeredEmployee }) => {
+export const Form = ({ title, value, registeredEmployee, grupos }) => {
   const [name, setName] = useState("");
   const [post, setPost] = useState("");
   const [image, setImage] = useState("");
@@ -14,7 +15,11 @@ export const Form = ({ title, value, registeredEmployee }) => {
     e.preventDefault();
 
     if (name !== "" && post !== "" && image !== "") {
+
+      const id = uuidv4();
+
       registeredEmployee({
+        id,
         name,
         post,
         image,
@@ -51,7 +56,7 @@ export const Form = ({ title, value, registeredEmployee }) => {
         label="Imagem"
         placeholder="Coloque o endereço da imagem"
       />
-      <DropDown time={time} setTime={setTime} label="Times" />
+      <DropDown time={time} grupos={grupos} setTime={setTime} label="Times" />
       <Button /* onClick={submitFunction} */>Criar card</Button>
     </form>
   );
