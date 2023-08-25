@@ -2,7 +2,7 @@ import { Card } from "../Card";
 import styles from "./styles.module.css";
 
 export const Team = ({ name, bgcolor, bColor, employees }) => {
-  return (
+  return employees.length > 0 ? (
     <section
       className={styles.container}
       style={{
@@ -24,9 +24,12 @@ export const Team = ({ name, bgcolor, bColor, employees }) => {
             bColor={bColor}
             name={employee.name}
             post={employee.post}
-            image={employee.image} />
+            image={employee.image}
+          />
         ))}
       </div>
-    </section >
+    </section>
+  ) : (
+    ""
   );
 };

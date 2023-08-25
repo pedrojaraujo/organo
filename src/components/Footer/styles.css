@@ -1,0 +1,9 @@
+.footerContainer {
+  background: var(--purpledefault);
+  background-image: url("/public/images/footer/fundo.png");
+  margin-top: 80px;
+  height: 12rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

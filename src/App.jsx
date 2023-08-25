@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Banner } from "./components/Banner";
 import { Form } from "./components/Form";
 import { Team } from "./components/Team";
+import { Footer } from "./components/Footer";
 
 function App() {
   const times = [
@@ -49,15 +50,7 @@ function App() {
     },
   ];
 
-  const [employees, setEmployees] = useState([
-    {
-      id: 1,
-      name: "Pedro Joaquim",
-      post: "Programador",
-      image: "https://github.com/pedrojaraujo.png",
-      time: "Programação",
-    }
-  ]);
+  const [employees, setEmployees] = useState([]);
 
   const newEmployee = (employee) => {
     setEmployees([...employees, employee]);
@@ -81,9 +74,12 @@ function App() {
           name={time.name}
           bgcolor={time.corSecundaria}
           bColor={time.corPrimaria}
-          employees={employees}
+          employees={employees.filter(
+            (employee) => employee.time === time.name,
+          )}
         />
       ))}
+      <Footer />
     </div>
   );
 }

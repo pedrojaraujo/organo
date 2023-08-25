@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import { Textfields } from "../Textfields";
 import { DropDown } from "../DropDown";
 import { Button } from "../Button";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export const Form = ({ title, value, registeredEmployee, grupos }) => {
   const [name, setName] = useState("");
@@ -15,7 +15,6 @@ export const Form = ({ title, value, registeredEmployee, grupos }) => {
     e.preventDefault();
 
     if (name !== "" && post !== "" && image !== "") {
-
       const id = uuidv4();
 
       registeredEmployee({
