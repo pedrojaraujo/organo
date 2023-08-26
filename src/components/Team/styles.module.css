@@ -1,16 +1,35 @@
 .container {
+  position: relative;
   text-align: center;
   padding: 32px;
+  background-image: url("/public/images/footer/fundo.png");
 }
 
 .h3 {
   font-size: var(--largesizefont);
-  border-bottom: 4px solid;
+  font-weight: var(--normalheight);
+  border-bottom: 2px solid;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 3%;
 }
 
 .containerCard {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 30px;
   align-items: top;
+}
+
+.inputColor {
+  position: absolute;
+  box-sizing: border-box;
+  top: 20px;
+  right: 50px;
+  padding: 0;
+  height: 25px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
 }

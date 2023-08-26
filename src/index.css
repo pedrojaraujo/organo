@@ -99,3 +99,16 @@ input:focus {
 textarea:focus {
   outline: none;
 }
+
+.times {
+  text-align: center;
+}
+
+.times h1 {
+  font-size: 40px;
+  color: #6278f7;
+  border-bottom: 2px solid #6278f7;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 80px;
+}

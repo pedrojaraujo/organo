@@ -6,6 +6,9 @@ export const Footer = () => {
       <div>
         <img src="images/footer/logo.png" alt="logotipo escrito organo" />
       </div>
+      <section>
+        <p>Desenvolvido por Pedro Joaquim Araujo ©</p>
+      </section>
     </div>
   );
 };
