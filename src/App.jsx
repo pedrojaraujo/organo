@@ -5,50 +5,43 @@ import { Team } from "./components/Team";
 import { Footer } from "./components/Footer";
 
 function App() {
-  const times = [
+  const [times, setTimes] = useState([
     {
       id: 1,
       name: "Programação",
-      corPrimaria: "#57c278",
-      corSecundaria: "#d9f7e9",
+      cor: "#d9f7e9",
     },
     {
       id: 2,
       name: "Front-End",
-      corPrimaria: "#82cffa",
-      corSecundaria: "#e8f8ff",
+      cor: "#e8f8ff",
     },
     {
       id: 3,
       name: "Data Science",
-      corPrimaria: "#a6d157",
-      corSecundaria: "#f0f8e2",
+      cor: "#f0f8e2",
     },
     {
       id: 4,
       name: "Devops",
-      corPrimaria: "#e06b69",
-      corSecundaria: "#fde7e8",
+      cor: "#fde7e8",
     },
     {
       id: 5,
       name: "Ux e Design",
-      corPrimaria: "#db6ebf",
-      corSecundaria: "#fae9f5",
+      cor: "#fae9f5",
     },
     {
       id: 6,
       name: "Mobile",
-      corPrimaria: "#ffba05",
-      corSecundaria: "#fff5d9",
+      cor: "#fff5d9",
     },
     {
       id: 7,
       name: "Inovação e Gestão",
-      corPrimaria: "#ff8a29",
-      corSecundaria: "#ffeedf",
+      cor: "#ffeedf",
     },
-  ];
+  ])
 
   const [employees, setEmployees] = useState([
     {
@@ -111,6 +104,15 @@ function App() {
     console.log("Deletou card!");
   };
 
+  const changeColorTime = (color, id) => {
+    setTimes(times.map(time => {
+      if (time.id === id) {
+        time.cor = color;
+      }
+      return time;
+    }));
+  };
+
   return (
     <div className="App">
       <Banner />
@@ -125,9 +127,11 @@ function App() {
           <Team
             key={time.id}
             name={time.name}
-            bgcolor={time.corSecundaria}
-            bColor={time.corPrimaria}
+            cor={time.cor}
+            setTimes={setTimes}
             deleteUser={deleteUser}
+            changeColor={changeColorTime}
+            time={time}
             employees={employees.filter(
               (employee) => employee.time === time.name,
             )}

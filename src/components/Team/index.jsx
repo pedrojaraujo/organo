@@ -1,21 +1,20 @@
+import hexToRgba from 'hex-to-rgba';
 import { Card } from "../Card";
 import styles from "./styles.module.css";
 
-export const Team = ({ name, bgcolor, bColor, employees, deleteUser }) => {
+export const Team = ({ name, employees, deleteUser, changeColor, time, cor }) => {
+
   return employees.length > 0 ? (
     <>
       <section
         className={styles.container}
-        style={{
-          backgroundColor: bgcolor,
-        }}
+        style={{ backgroundColor: hexToRgba(cor, '0.6') }}
+
       >
-        <input type="color" className={styles.inputColor} />
+        <input value={cor} onChange={(e) => changeColor(e.target.value, time.id)} type="color" className={styles.inputColor} />
         <h3
           className={styles.h3}
-          style={{
-            borderBottomColor: bColor,
-          }}
+
         >
           {name}
         </h3>
@@ -25,7 +24,7 @@ export const Team = ({ name, bgcolor, bColor, employees, deleteUser }) => {
               <Card
                 deleteUser={deleteUser}
                 key={employee.id}
-                bColor={bColor}
+                cor={cor}
                 name={employee.name}
                 post={employee.post}
                 image={employee.image}
@@ -33,7 +32,7 @@ export const Team = ({ name, bgcolor, bColor, employees, deleteUser }) => {
             );
           })}
         </div>
-      </section>
+      </section >
     </>
   ) : (
     ""
