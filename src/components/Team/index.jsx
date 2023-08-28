@@ -24,6 +24,7 @@ export const Team = ({ name, employees, deleteUser, changeColor, time, cor }) =>
               <Card
                 deleteUser={deleteUser}
                 key={employee.id}
+                id={employee.id}
                 cor={cor}
                 name={employee.name}
                 post={employee.post}

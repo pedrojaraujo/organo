@@ -3,8 +3,9 @@ import { Banner } from "./components/Banner";
 import { Form } from "./components/Form";
 import { Team } from "./components/Team";
 import { Footer } from "./components/Footer";
+import { v4 as uuidv4 } from "uuid";
 
-function App() {
+function App({ setNomeTime, setCorTime }) {
   const [times, setTimes] = useState([
     {
       id: 1,
@@ -51,6 +52,20 @@ function App() {
       image: "https://github.com/pedrojaraujo.png",
       time: "Programação",
     },
+    {
+      id: 2,
+      name: "Martinez Silva",
+      post: "Programador Mobile",
+      image: "https://github.com/pedrojaraujo.png",
+      time: "Mobile",
+    },
+    {
+      id: 3,
+      name: "Diogo Calabrez",
+      post: "Programador Front-end",
+      image: "https://github.com/pedrojaraujo.png",
+      time: "Programação",
+    },
 
   ]);
 
@@ -58,8 +73,8 @@ function App() {
     setEmployees([...employees, employee]);
   };
 
-  const deleteUser = () => {
-    console.log("Deletou card!");
+  const deleteUser = (id) => {
+    setEmployees(employees.filter(employee => employee.id !== id))
   };
 
   const changeColorTime = (color, id) => {
@@ -71,12 +86,17 @@ function App() {
     }));
   };
 
+
+  const registerTeam = (newTeam) => {
+    setTimes([...times, { ...newTeam, id: uuidv4() }])
+
+  }
   return (
     <div className="App">
       <Banner />
       <Form
+        registerTeam={registerTeam}
         grupos={times}
-        title="Preencha os dados para criar o card do colaborador."
         registeredEmployee={(employee) => newEmployee(employee)}
       />
       <section className="times">
