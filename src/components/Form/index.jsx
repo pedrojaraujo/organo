@@ -93,9 +93,12 @@ export const Form = ({
           placeholder="Digite o nome do time"
         />
         <Textfields
+          styles={{
+            height: "20px",
+          }}
           value={corTime}
           setState={setCorTime}
-          type="text"
+          type="color"
           label="Cor"
           placeholder="Digete a cor do time"
         />

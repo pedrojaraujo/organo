@@ -1,6 +1,13 @@
 import styles from "./styles.module.css";
 
-export const Textfields = ({ label, placeholder, type, value, setState }) => {
+export const Textfields = ({
+  label,
+  placeholder,
+  type,
+  value,
+  setState,
+  className,
+}) => {
   const stateInput = (e) => {
     setState(e.target.value);
   };
@@ -12,7 +19,7 @@ export const Textfields = ({ label, placeholder, type, value, setState }) => {
         value={value}
         onChange={stateInput}
         type={type}
-        className={styles.input__text}
+        className={type === "color" ? styles.coloring : styles.input__text}
         placeholder={placeholder}
         required
       />
