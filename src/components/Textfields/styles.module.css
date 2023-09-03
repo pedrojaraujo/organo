@@ -2,7 +2,8 @@
   display: flex;
   gap: 10px;
   flex-direction: column;
-  width: 930px;
+  width: 100%;
+  margin: auto;
   height: 110px;
   margin-block: 30px;
 }
@@ -15,6 +16,7 @@
 .input__text {
   border: none;
   height: 80px;
-  width: 930px;
+  width: 100%;
+  margin: auto;
   box-shadow: 10px 10px 30px 0px #0000000f;
 }

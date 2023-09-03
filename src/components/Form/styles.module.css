@@ -1,7 +1,14 @@
+.formContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: 30px;
+  gap: 30px;
+}
+
 .text__container {
   box-sizing: border-box;
-  width: 1121px;
-  height: 789px;
+  flex: 1;
+  height: 800px;
   margin-inline: auto;
   margin-block: 80px;
   padding-block: 10px;

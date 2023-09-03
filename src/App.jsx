@@ -5,7 +5,7 @@ import { Team } from "./components/Team";
 import { Footer } from "./components/Footer";
 import { v4 as uuidv4 } from "uuid";
 
-function App({ setNomeTime, setCorTime }) {
+function App() {
   const [times, setTimes] = useState([
     {
       id: 1,
@@ -42,7 +42,9 @@ function App({ setNomeTime, setCorTime }) {
       name: "Inovação e Gestão",
       cor: "#ff8a29",
     },
-  ])
+  ]);
+  const [nomeTime, setNomeTime] = useState("");
+  const [corTime, setCorTime] = useState("");
 
   const [employees, setEmployees] = useState([
     {
@@ -66,7 +68,6 @@ function App({ setNomeTime, setCorTime }) {
       image: "https://github.com/pedrojaraujo.png",
       time: "Programação",
     },
-
   ]);
 
   const newEmployee = (employee) => {
@@ -74,27 +75,33 @@ function App({ setNomeTime, setCorTime }) {
   };
 
   const deleteUser = (id) => {
-    setEmployees(employees.filter(employee => employee.id !== id))
+    setEmployees(employees.filter((employee) => employee.id !== id));
   };
 
   const changeColorTime = (color, id) => {
-    setTimes(times.map(time => {
-      if (time.id === id) {
-        time.cor = color;
-      }
-      return time;
-    }));
+    setTimes(
+      times.map((time) => {
+        if (time.id === id) {
+          time.cor = color;
+        }
+        return time;
+      }),
+    );
   };
 
-
   const registerTeam = (newTeam) => {
-    setTimes([...times, { ...newTeam, id: uuidv4() }])
-
-  }
+    setTimes([...times, { ...newTeam, id: uuidv4() }]);
+    setNomeTime("");
+    setCorTime("");
+  };
   return (
     <div className="App">
       <Banner />
       <Form
+        nomeTime={nomeTime}
+        corTime={corTime}
+        setNomeTime={setNomeTime}
+        setCorTime={setCorTime}
         registerTeam={registerTeam}
         grupos={times}
         registeredEmployee={(employee) => newEmployee(employee)}

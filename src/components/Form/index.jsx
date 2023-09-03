@@ -5,13 +5,20 @@ import { DropDown } from "../DropDown";
 import { Button } from "../Button";
 import { v4 as uuidv4 } from "uuid";
 
-export const Form = ({ value, registeredEmployee, grupos, registerTeam }) => {
+export const Form = ({
+  value,
+  registeredEmployee,
+  grupos,
+  registerTeam,
+  corTime,
+  nomeTime,
+  setCorTime,
+  setNomeTime,
+}) => {
   const [name, setName] = useState("");
   const [post, setPost] = useState("");
   const [image, setImage] = useState("");
   const [time, setTime] = useState("");
-  const [nomeTime, setNomeTime] = useState("");
-  const [corTime, setCorTime] = useState("");
 
   const createCard = (e) => {
     e.preventDefault();
@@ -34,9 +41,16 @@ export const Form = ({ value, registeredEmployee, grupos, registerTeam }) => {
   };
 
   return (
-    <>
-      <form className={styles.text__container} onSubmit={createCard} setCorTime={setCorTime} setNomeTime={setNomeTime} >
-        <h1 className={styles.title__text__field}>Preencha os dados para criar o card do colaborador</h1>
+    <div className={styles.formContainer}>
+      <form
+        className={styles.text__container}
+        onSubmit={createCard}
+        setCorTime={setCorTime}
+        setNomeTime={setNomeTime}
+      >
+        <h1 className={styles.title__text__field}>
+          Preencha os dados para criar o card do colaborador
+        </h1>
         <Textfields
           value={name}
           setState={setName}
@@ -61,11 +75,16 @@ export const Form = ({ value, registeredEmployee, grupos, registerTeam }) => {
         <DropDown time={time} grupos={grupos} setTime={setTime} label="Times" />
         <Button>Criar card</Button>
       </form>
-      <form className={styles.text__container} onSubmit={(e) => {
-        e.preventDefault()
-        registerTeam({ name: nomeTime, cor: corTime })
-      }}>
-        <h1 className={styles.title__text__field}>Preencha os dados para criar um time</h1>
+      <form
+        className={styles.text__container}
+        onSubmit={(e) => {
+          e.preventDefault();
+          registerTeam({ name: nomeTime, cor: corTime });
+        }}
+      >
+        <h1 className={styles.title__text__field}>
+          Preencha os dados para criar um time
+        </h1>
         <Textfields
           value={nomeTime}
           setState={setNomeTime}
@@ -82,6 +101,6 @@ export const Form = ({ value, registeredEmployee, grupos, registerTeam }) => {
         />
         <Button>Criar time</Button>
       </form>
-    </>
+    </div>
   );
 };
